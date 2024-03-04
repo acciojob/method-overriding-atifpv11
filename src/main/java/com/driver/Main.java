@@ -1,14 +1,21 @@
 package com.driver;
 
 public class Main {
-    public static void main(String[] args) {
-        // Task 3: Now call the method from class A using object of class B
-        A objA = new A(); // Upcasting B to A
-        System.out.println(objA.meth());
+    public void main(String[] args) {
+        A obj = new B();
+        String ans = obj.meth();
+        System.out.println(ans);
+    }
 
-        // Task 3: Create object of class B and call method meth of class A with it
-        B objB = new B();
-        System.out.println(objB.meth()); // Task 5: Call overridden method from obj of class B
+    public static class A {
+        public String meth() {
+            return "Invoking method from class A";
+        }
+    }
 
+    public static class B extends A {
+        public String meth() {
+            return "Method is overridden in Extendend class B";
+        }
     }
 }
